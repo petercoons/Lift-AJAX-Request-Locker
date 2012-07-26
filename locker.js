@@ -1,4 +1,33 @@
 /**
+ * Copyright 2012 Audax Health
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * locker.js - Locking Mechanism for Lift-Based AJAX Requests
+ *
+ * This creates a locking mechanism specifically for use with Lift Ajax calls.
+ *
+ * Every time we invoke the Lift AJAX handler, we will add the call to the locker to prevent multiple requests going to
+ * the server.
+ *
+ * TO USE: Simply add one of the following classes on to the item that will call the AJAX handler.
+ *  - l_callOnce: Make the ajax request one time only (useful for forms or other posts)
+ *  - l_callAndWait: Lock the request until it returns, then unlock it. *This should be used for most things*
+ */
+
+/**
  * Invoke the AjaxLocker only if the Lift Ajax Handler is loaded.
  */
 $('document').ready( function() {
@@ -13,14 +42,7 @@ $('document').ready( function() {
 });
 
 /**
- * This creates a locking mechanism specifically for use with Lift Ajax calls.
- *
- * Every time we invoke the Lift AJAX handler, we will add the call to the locker to prevent multiple requests going to
- * the server.
- *
- * TO USE: Simply add one of the following classes on to the item that will call the AJAX handler.
- *  - l_callOnce: Make the ajax request one time only (useful for forms or other posts)
- *  - l_callAndWait: Lock the request until it returns, then unlock it. *This should be used for most things*
+ * LiftAjaxLocker contains the locker hash as well as the functions to lock / unlock / hijack the Lift AJAX calls
  */
 (function(LiftAjaxLocker) {
 

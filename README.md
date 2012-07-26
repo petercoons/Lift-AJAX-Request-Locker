@@ -18,6 +18,10 @@ Requirements:
 1. jQuery
 2. Lift
 
+License:
+
+Licensed under the <b>Apache 2.0 license</b>.
+
 Credits:
 
 Created by Peter Coons for <a href="http://www.audaxhealth.com">Audax Health</a>
