@@ -8,8 +8,10 @@ Usage:
 
 1. Import locker.js in your Lift page (preferably in the head)
 2. Assign a special class to the element that will invoke your AJAX request.
- > l_callOnce - Allows one instance of that AJAX call to be invoked once
- > l_callAndWait - Allows one instance of that AJAX request to be sent at one time. It waits for that call to return, then allows another call.
+ 
+  a. l_callOnce - Allows one instance of that AJAX call to be invoked once
+
+  b. l_callAndWait - Allows one instance of that AJAX request to be sent at one time. It waits for that call to return, then allows another call.
 
 Requirements:
 
